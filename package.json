@@ -16,5 +16,14 @@
   },
   "dependencies": {
     "core-js": "3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamaltarafdar78/react-app-template.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/jamaltarafdar78/react-app-template/issues"
+  },
+  "homepage": "https://github.com/jamaltarafdar78/react-app-template#readme"
 }
