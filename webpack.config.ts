@@ -1,5 +1,7 @@
 import path from "path";
 import webpack from "webpack";
+import HTMLWebpackPlugin from "html-webpack-plugin";
+
 
 const config: webpack.Configuration = {
     mode: 'production',
@@ -15,11 +17,16 @@ const config: webpack.Configuration = {
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 options:{
-                    presets:['@babel/preset-env']
+                    presets:['@babel/preset-env', '@babel/preset-react']
                 }
             }
         ]
-    }
+    },
+    plugins:[
+        new HTMLWebpackPlugin({
+            template: './src/index.html'
+        })
+    ]
 
 }
 
