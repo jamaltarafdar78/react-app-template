@@ -5,6 +5,7 @@ import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 const config: webpack.Configuration = {
     context: __dirname,
+    mode: 'production',
     entry: './src/index.tsx',
     output: {
         path: path.resolve(__dirname, 'dist'),  // need to define absolute path
