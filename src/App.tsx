@@ -13,8 +13,8 @@ class App extends React.Component<{}, WithCount>{
     render(){
       return (
         <div>
-        <h1>Hello world</h1>
-        <h2 className={this.state.count > 9 ? 'warning' : null}>Count: {this.state.count}</h2>
+        <h1 data-testid="welcome">Hello world</h1>
+        <h2 className={this.state.count > 9 ? 'warning' : null} data-testid="count">Count: {this.state.count}</h2>
         <button onClick={() => this.setState((state) => ({
                 count: state.count + 1
             }))}>+</button>
