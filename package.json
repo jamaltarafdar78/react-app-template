@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack --config webpack.config.prod.ts",
     "dev": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack-dev-server --open --config webpack.config.dev.ts",
-    "dev:hot": "yarn dev --hot"
+    "dev:hot": "yarn dev --hot",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
