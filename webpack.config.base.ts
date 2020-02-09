@@ -20,7 +20,15 @@ const config: webpack.Configuration = {
                 test: /\.(j|t)sx?$/,
                 loader: 'babel-loader',
                 options:{
-                    presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+                    presets: [['@babel/preset-env', {
+                        useBuiltIns: 'entry',
+                        targets: [
+                            "last 2 versions",
+                            "not dead",
+                            "not < 2%",
+                            "not IE 11"
+                        ]
+                    }], '@babel/preset-react', '@babel/preset-typescript'],
                     plugins: ['react-hot-loader/babel','@babel/plugin-proposal-class-properties']
                 }
             },
