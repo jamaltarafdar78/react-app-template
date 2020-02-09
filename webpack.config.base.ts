@@ -17,10 +17,11 @@ const config: webpack.Configuration = {
     module:{
         rules:[
             {
-                test: /\.tsx?$/,
-                loader: 'ts-loader',
+                test: /\.(j|t)sx?$/,
+                loader: 'babel-loader',
                 options:{
-                    transpileOnly: true
+                    presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+                    plugins: ['@babel/plugin-proposal-class-properties']
                 }
             },
             {
