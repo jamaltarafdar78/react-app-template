@@ -21,7 +21,7 @@ const config: webpack.Configuration = {
                 loader: 'babel-loader',
                 options:{
                     presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
-                    plugins: ['@babel/plugin-proposal-class-properties']
+                    plugins: ['react-hot-loader/babel','@babel/plugin-proposal-class-properties']
                 }
             },
             {

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack --config webpack.config.prod.ts",
-    "dev": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack-dev-server --open --config webpack.config.dev.ts"
+    "dev": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack-dev-server --open --config webpack.config.dev.ts",
+    "dev:hot": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack-dev-server --open --hot --config webpack.config.dev.ts"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "css-loader": "^3.4.2",
     "fork-ts-checker-webpack-plugin": "^4.0.3",
     "html-webpack-plugin": "^3.2.0",
+    "react-hot-loader": "^4.12.19",
     "style-loader": "^1.1.3",
     "ts-node": "^8.6.2",
     "tsconfig-paths": "^3.9.0",
