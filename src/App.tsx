@@ -18,7 +18,7 @@ class App extends React.Component<{}, WithCount>{
         <button data-testid="incrementCount" onClick={() => this.setState((state) => ({
                 count: state.count + 1
             }))}>+</button>
-            <button onClick={() => this.setState((state) => ({
+            <button data-testid="decrementCount" onClick={() => this.setState((state) => ({
                 count: state.count - 1
             }))}>-</button>
     </div>

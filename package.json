@@ -7,7 +7,8 @@
     "build": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack --config webpack.config.prod.ts",
     "dev": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack-dev-server --open --config webpack.config.dev.ts",
     "dev:hot": "yarn dev --hot",
-    "test": "jest"
+    "test:dev": "jest",
+    "test": "jest --collectCoverage --reporters=\"default\""
   },
   "author": "",
   "license": "ISC",
