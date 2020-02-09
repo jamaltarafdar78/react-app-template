@@ -1,8 +1,8 @@
-import merge from "webpack-merge";
-import baseConfig from "./webpack.config.base";
+import merge from 'webpack-merge';
+import baseConfig from './webpack.config.base';
 
 export default merge(baseConfig, {
     mode: 'development',
     watch: true,
-    devtool: 'inline-source-map'
-})
+    devtool: 'inline-source-map',
+});
