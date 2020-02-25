@@ -29,7 +29,6 @@ const config: webpack.Configuration = {
                                     'last 2 versions',
                                     'not dead',
                                     'not < 2%',
-                                    'not IE 11',
                                 ],
                             },
                         ],
