@@ -24,5 +24,9 @@ module.exports = {
         sourceType: 'module',
     },
     plugins: ['react', '@typescript-eslint'],
-    rules: {},
+    rules: {
+        'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
+        'react/jsx-indent': ['error', 4],
+        'react/jsx-indent-props': [4, 'tab'],
+    },
 };

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import * as React from 'react';
 import { render, RenderResult, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
@@ -11,12 +12,12 @@ describe('App', () => {
     });
 
     it('welcome element should be rendered', () => {
-        let welcomeElement = renderResult.getByTestId('welcome');
+        const welcomeElement = renderResult.getByTestId('welcome');
         expect(welcomeElement).toBeTruthy();
     });
 
     it('count should be rendered and initialised at correct value', () => {
-        let countElement = renderResult.getByTestId('count');
+        const countElement = renderResult.getByTestId('count');
         expect(countElement).toBeTruthy();
         expect(countElement.innerHTML).toBe('Count: 0');
     });
