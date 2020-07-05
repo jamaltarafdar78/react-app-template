@@ -9,6 +9,12 @@ interface WithCount {
 const App = () => {
     const [count, setCount] = React.useState<number>(0);
 
+    const makeClickHandler = (
+        event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    ) => {
+        setCount(count + parseInt(event.currentTarget.value, 10));
+    };
+
     return (
         <div>
             <h1 data-testid="welcome">Hello world</h1>
@@ -17,13 +23,15 @@ const App = () => {
             </h2>
             <button
                 data-testid="incrementCount"
-                onClick={() => setCount(count + 1)}
+                onClick={makeClickHandler}
+                value={1}
             >
                 +
             </button>
             <button
                 data-testid="decrementCount"
-                onClick={() => setCount(count - 1)}
+                onClick={makeClickHandler}
+                value={-1}
             >
                 -
             </button>
