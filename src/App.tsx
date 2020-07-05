@@ -6,44 +6,29 @@ interface WithCount {
     count: number;
 }
 
-class App extends React.Component<{}, WithCount> {
-    state = {
-        count: 0,
-    };
+const App = () => {
+    const [count, setCount] = React.useState<number>(0);
 
-    render() {
-        return (
-            <div>
-                <h1 data-testid="welcome">Hello world</h1>
-                <h2
-                    className={this.state.count > 9 ? 'warning' : null}
-                    data-testid="count"
-                >
-                    Count: {this.state.count}
-                </h2>
-                <button
-                    data-testid="incrementCount"
-                    onClick={() =>
-                        this.setState(state => ({
-                            count: state.count + 1,
-                        }))
-                    }
-                >
-                    +
-                </button>
-                <button
-                    data-testid="decrementCount"
-                    onClick={() =>
-                        this.setState(state => ({
-                            count: state.count - 1,
-                        }))
-                    }
-                >
-                    -
-                </button>
-            </div>
-        );
-    }
-}
+    return (
+        <div>
+            <h1 data-testid="welcome">Hello world</h1>
+            <h2 className={count > 9 ? 'warning' : null} data-testid="count">
+                Count: {count}
+            </h2>
+            <button
+                data-testid="incrementCount"
+                onClick={() => setCount(count + 1)}
+            >
+                +
+            </button>
+            <button
+                data-testid="decrementCount"
+                onClick={() => setCount(count - 1)}
+            >
+                -
+            </button>
+        </div>
+    );
+};
 
 export default hot(module)(App);
