@@ -3,11 +3,8 @@ import * as ReactDOM from 'react-dom';
 import App from './App';
 import './styles.css';
 import '@babel/polyfill';
+import { store } from './store';
 
-import { ITodo } from './ITodoType';
+const { todos } = store.getState();
 
-const state: { todos: ITodo[] } = {
-    todos: [{ id: 5, name: 'new todo', isComplete: false }],
-};
-
-ReactDOM.render(<App todos={state.todos} />, document.getElementById('app'));
+ReactDOM.render(<App todos={todos} />, document.getElementById('app'));

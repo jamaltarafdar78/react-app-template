@@ -15,13 +15,7 @@ interface IAction {
     payload: any;
 }
 
-export default ({
-    state: { todos },
-    action,
-}: {
-    state: { todos: ITodo[] };
-    action: IAction;
-}) => {
+export default ({ todos }: { todos: ITodo[] } = init, action: IAction) => {
     switch (action.type) {
         case 'add':
             return { todos: todos.concat(action.payload as ITodo[]) };
