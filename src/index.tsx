@@ -4,4 +4,10 @@ import App from './App';
 import './styles.css';
 import '@babel/polyfill';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+import { ITodo } from './ITodoType';
+
+const state: { todos: ITodo[] } = {
+    todos: [{ id: 5, name: 'new todo', isComplete: false }],
+};
+
+ReactDOM.render(<App todos={state.todos} />, document.getElementById('app'));

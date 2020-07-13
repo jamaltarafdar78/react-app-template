@@ -1,40 +1,21 @@
 import * as React from 'react';
+import { ITodo } from './ITodoType';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { hot } from 'react-hot-loader';
+import { TodoForm } from '../src/components/TodoForm';
+import { TodoListItem } from '../src/components/TodoListItem';
 
 interface WithCount {
     count: number;
 }
 
-const App = () => {
-    const [count, setCount] = React.useState<number>(0);
-
-    const makeClickHandler = (
-        event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-    ) => {
-        setCount(count + parseInt(event.currentTarget.value, 10));
-    };
-
+const App = ({ todos }: { todos: ITodo[] }) => {
     return (
-        <div>
-            <h1 data-testid="welcome">Hello world</h1>
-            <h2 className={count > 9 ? 'warning' : null} data-testid="count">
-                Count: {count}
-            </h2>
-            <button
-                data-testid="incrementCount"
-                onClick={makeClickHandler}
-                value={1}
-            >
-                +
-            </button>
-            <button
-                data-testid="decrementCount"
-                onClick={makeClickHandler}
-                value={-1}
-            >
-                -
-            </button>
+        <div className="App">
+            <div className="App-Header">
+                <h2>Todo App with Redux</h2>
+            </div>
+            <TodoForm todos={todos} renderItem={TodoListItem} />
         </div>
     );
 };

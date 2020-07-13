@@ -1,0 +1,31 @@
+import { ITodo } from '../ITodoType';
+
+export const init = {
+    todos: [
+        { id: 1, name: 'Render Static UI', isComplete: true },
+        { id: 2, name: 'Create initial state', isComplete: true },
+        { id: 3, name: 'Render on state', isComplete: false },
+    ],
+};
+
+type ActionTypes = 'add';
+
+interface IAction {
+    type: ActionTypes;
+    payload: any;
+}
+
+export default ({
+    state: { todos },
+    action,
+}: {
+    state: { todos: ITodo[] };
+    action: IAction;
+}) => {
+    switch (action.type) {
+        case 'add':
+            return { todos: todos.concat(action.payload as ITodo[]) };
+        default:
+            return { todos };
+    }
+};
