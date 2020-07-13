@@ -10,7 +10,7 @@ export const init = {
 
 type ActionTypes = 'add';
 
-interface IAction {
+export interface IAction {
     type: ActionTypes;
     payload: any;
 }

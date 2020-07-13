@@ -4,7 +4,29 @@ import App from './App';
 import './styles.css';
 import '@babel/polyfill';
 import { store } from './store';
+import { ITodo } from './ITodoType';
 
-const { todos } = store.getState();
+const addNewTodo = (newTodo: string) => {
+    const { todos } = store.getState();
+    const payload: ITodo = {
+        id: todos.length + 1,
+        name: newTodo,
+        isComplete: false,
+    };
+    store.dispatch({ type: 'add', payload });
+};
 
-ReactDOM.render(<App todos={todos} />, document.getElementById('app'));
+export type addNewTodoType = typeof addNewTodo;
+
+const render = () => {
+    const { todos } = store.getState();
+
+    ReactDOM.render(
+        <App todos={todos} addNewTodo={addNewTodo} />,
+        document.getElementById('app')
+    );
+};
+
+render();
+
+store.subscribe(render);

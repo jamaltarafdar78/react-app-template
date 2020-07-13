@@ -4,18 +4,25 @@ import { ITodo } from './ITodoType';
 import { hot } from 'react-hot-loader';
 import { TodoForm } from '../src/components/TodoForm';
 import { TodoListItem } from '../src/components/TodoListItem';
+import { addNewTodoType } from './index';
 
-interface WithCount {
-    count: number;
-}
-
-const App = ({ todos }: { todos: ITodo[] }) => {
+const App = ({
+    todos,
+    addNewTodo,
+}: {
+    todos: ITodo[];
+    addNewTodo: addNewTodoType;
+}) => {
     return (
         <div className="App">
             <div className="App-Header">
                 <h2>Todo App with Redux</h2>
             </div>
-            <TodoForm todos={todos} renderItem={TodoListItem} />
+            <TodoForm
+                todos={todos}
+                addNewTodo={addNewTodo}
+                renderItem={TodoListItem}
+            />
         </div>
     );
 };
