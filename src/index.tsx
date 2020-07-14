@@ -5,6 +5,7 @@ import './styles.css';
 import '@babel/polyfill';
 import { store } from './store';
 import { ITodo } from './ITodoType';
+import { Provider } from 'react-redux';
 
 const addNewTodo = (newTodo: string) => {
     const { todos } = store.getState();
@@ -18,15 +19,10 @@ const addNewTodo = (newTodo: string) => {
 
 export type addNewTodoType = typeof addNewTodo;
 
-const render = () => {
-    const { todos } = store.getState();
+ReactDOM.render(
+    <Provider store={store}>
+        <App addNewTodo={addNewTodo} />,
+    </Provider>,
 
-    ReactDOM.render(
-        <App todos={todos} addNewTodo={addNewTodo} />,
-        document.getElementById('app')
-    );
-};
-
-render();
-
-store.subscribe(render);
+    document.getElementById('app')
+);

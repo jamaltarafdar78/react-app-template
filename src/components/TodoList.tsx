@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ITodo } from '../ITodoType';
+import { connect } from 'react-redux';
 
 export const TodoList = ({
     todos,
@@ -12,3 +13,6 @@ export const TodoList = ({
         <ul>{todos.map(renderItem)}</ul>
     </div>
 );
+
+const mapStateToProps = ({ todos }: { todos: ITodo[] }) => ({ todos });
+export const ConnectedTodoList = connect(mapStateToProps)(TodoList);
