@@ -1,7 +1,13 @@
 import * as React from 'react';
-import { addNewTodoType } from '../index';
+import { AddNewTodoAction, addNewTodo } from '../reducer/todos';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-export const TodoSubmit = ({ addNewTodo }: { addNewTodo: addNewTodoType }) => {
+export const TodoSubmit = ({
+    addNewTodo,
+}: {
+    addNewTodo: AddNewTodoAction;
+}) => {
     const inputRef: React.MutableRefObject<HTMLInputElement> = React.useRef();
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         debugger;
@@ -17,3 +23,11 @@ export const TodoSubmit = ({ addNewTodo }: { addNewTodo: addNewTodoType }) => {
         </form>
     );
 };
+
+const mapStateToProps = (state: any) => ({});
+const mapDispatchToProps = { addNewTodo };
+
+export const ConnectedTodoSubmit = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(TodoSubmit);

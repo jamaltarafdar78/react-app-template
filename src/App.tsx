@@ -4,16 +4,15 @@ import { ITodo } from './ITodoType';
 import { hot } from 'react-hot-loader';
 import { TodoForm } from '../src/components/TodoForm';
 import { TodoListItem } from '../src/components/TodoListItem';
-import { addNewTodoType } from './index';
 import { connect } from 'react-redux';
 
-const App = ({ addNewTodo }: { addNewTodo: addNewTodoType }) => {
+const App = () => {
     return (
         <div className="App">
             <div className="App-Header">
                 <h2>Todo App with Redux</h2>
             </div>
-            <TodoForm addNewTodo={addNewTodo} renderItem={TodoListItem} />
+            <TodoForm renderItem={TodoListItem} />
         </div>
     );
 };

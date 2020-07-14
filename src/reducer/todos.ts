@@ -8,17 +8,37 @@ export const init = {
     ],
 };
 
-type ActionTypes = 'add';
+const buildNewTodo = (newTodo: string, newId: number) => {
+    const payload: ITodo = {
+        id: newId,
+        name: newTodo,
+        isComplete: false,
+    };
+
+    return payload;
+};
+
+export type ActionTypes = 'add';
+export type AddNewTodoAction = (newTodo: string) => IAction;
 
 export interface IAction {
     type: ActionTypes;
     payload: any;
 }
 
+export const addNewTodo: AddNewTodoAction = (newTodo: string) => ({
+    type: 'add',
+    payload: newTodo,
+});
+
 export default ({ todos }: { todos: ITodo[] } = init, action: IAction) => {
     switch (action.type) {
         case 'add':
-            return { todos: todos.concat(action.payload as ITodo[]) };
+            return {
+                todos: todos.concat([
+                    buildNewTodo(action.payload, todos.length + 1),
+                ]),
+            };
         default:
             return { todos };
     }
