@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { addNewTodoType } from '../index';
 import { TodoSubmit } from './TodoSubmit';
+import { TodoList } from './TodoList';
 
 export const TodoForm = ({
     todos,
@@ -14,9 +15,7 @@ export const TodoForm = ({
     return (
         <div className="Todo-App">
             <TodoSubmit addNewTodo={addNewTodo} />
-            <div className="Todo-List">
-                <ul>{todos.map(renderItem)}</ul>
-            </div>
+            <TodoList todos={todos} renderItem={renderItem} />
         </div>
     );
 };
