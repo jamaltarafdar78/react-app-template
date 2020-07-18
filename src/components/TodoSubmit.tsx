@@ -10,10 +10,11 @@ export const TodoSubmit = ({
 }) => {
     const inputRef: React.MutableRefObject<HTMLInputElement> = React.useRef();
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        debugger;
         event.preventDefault();
         const newTodo = inputRef.current.value as string;
         addNewTodo(newTodo);
+        inputRef.current.value = null;
+        inputRef.current.focus();
     };
 
     return (

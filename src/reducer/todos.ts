@@ -18,7 +18,7 @@ const buildNewTodo = (newTodo: string, newId: number) => {
     return payload;
 };
 
-export type ActionTypes = 'add';
+export type ActionTypes = 'add_observable' | 'add';
 export type AddNewTodoAction = (newTodo: string) => IAction;
 
 export interface IAction {
@@ -27,7 +27,7 @@ export interface IAction {
 }
 
 export const addNewTodo: AddNewTodoAction = (newTodo: string) => ({
-    type: 'add',
+    type: 'add_observable',
     payload: newTodo,
 });
 
