@@ -42,6 +42,7 @@
         "fork-ts-checker-webpack-plugin": "^4.0.3",
         "html-webpack-plugin": "^3.2.0",
         "jest": "^25.1.0",
+        "playwright": "^1.2.1",
         "prettier": "^1.19.1",
         "react-hot-loader": "^4.12.19",
         "style-loader": "^1.1.3",
