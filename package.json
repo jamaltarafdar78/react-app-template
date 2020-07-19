@@ -10,7 +10,8 @@
         "test:dev": "jest",
         "test": "jest --collectCoverage --reporters=\"default\"",
         "format": "prettier --write **/*.{js,ts,tsx,json}",
-        "lint": "eslint ./"
+        "lint": "eslint ./",
+        "e2e": "jest -c ./e2e/jest.config.e2e.js"
     },
     "author": "",
     "license": "ISC",
@@ -39,9 +40,11 @@
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-prettier": "^3.1.2",
         "eslint-plugin-react": "^7.18.3",
+        "expect-playwright": "^0.2.5",
         "fork-ts-checker-webpack-plugin": "^4.0.3",
         "html-webpack-plugin": "^3.2.0",
         "jest": "^25.1.0",
+        "jest-playwright-preset": "^1.2.1",
         "playwright": "^1.2.1",
         "prettier": "^1.19.1",
         "react-hot-loader": "^4.12.19",
